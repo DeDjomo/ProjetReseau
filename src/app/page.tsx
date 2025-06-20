@@ -2,7 +2,7 @@
 import MenuBar from "@/components/MenuBar";
 import SideBar from "@/components/SideBar";
 import WorldMapWrapper from "@/components/WorldMapWrapper";
-import '../styles/globals.css';
+import './globals.css';
 
 export default function Home() {
   return (
