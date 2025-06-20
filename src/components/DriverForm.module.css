@@ -1,0 +1,245 @@
+/* DriverForm.module.css - Version moderne */
+
+.driverForm {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #edf1f7 0%, #f8fafc 100%);
+    padding: 2rem;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(13, 71, 161, 0.1);
+    border-top: 4px solid #0D47A1;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.fleetFlow {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0D47A1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.mainTitle {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0;
+    letter-spacing: -0.025em;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.formSection {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.formSection:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(13, 71, 161, 0.15);
+}
+
+.sectionHeader {
+    background: linear-gradient(135deg, #0D47A1 0%, #1565C0 100%);
+    color: white;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sectionIcon {
+    width: 24px;
+    height: 24px;
+    color: #FF7A00;
+}
+
+.sectionTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.sectionContent {
+    padding: 2rem;
+}
+
+.photoSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #edf1f7 100%);
+    border-radius: 12px;
+    border: 2px dashed #cbd5e1;
+    transition: all 0.3s ease;
+}
+
+.photoSection:hover {
+    border-color: #FF7A00;
+    background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 100%);
+}
+
+.photoLabel {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 1rem;
+}
+
+.photoIcon {
+    width: 100px;
+    height: 100px;
+    color: #cbd5e1;
+    transition: all 0.3s ease;
+}
+
+.photoSection:hover .photoIcon {
+    color: #FF7A00;
+    transform: scale(1.05);
+}
+
+.fieldsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.fieldGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.fieldGroupFull {
+    grid-column: 1 / -1;
+}
+
+.label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.required {
+    color: #ef4444;
+    font-weight: 700;
+}
+
+.helpIcon {
+    width: 14px;
+    height: 14px;
+    color: #0D47A1;
+    background: #dbeafe;
+    border-radius: 50%;
+    padding: 2px;
+}
+
+.input {
+    padding: 0.875rem 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    background: white;
+    color: #1f2937;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #0D47A1;
+    box-shadow: 0 0 0 3px rgba(13, 71, 161, 0.1);
+    transform: translateY(-1px);
+}
+
+.input:hover {
+    border-color: #9ca3af;
+}
+
+.submitSection {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.submitButton {
+    background: linear-gradient(135deg, #0D47A1 0%, #1565C0 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 1rem 3rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(13, 71, 161, 0.3);
+    letter-spacing: -0.01em;
+}
+
+.submitButton:hover {
+    background: linear-gradient(135deg, #FF7A00 0%, #f97316 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 122, 0, 0.4);
+}
+
+.submitButton:active {
+    transform: translateY(0);
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .formGrid {
+        grid-template-columns: 1fr;
+    }
+    
+    .fieldsGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .driverForm {
+        padding: 1rem;
+    }
+    
+    .mainTitle {
+        font-size: 2rem;
+    }
+    
+    .sectionContent {
+        padding: 1.5rem;
+    }
+}

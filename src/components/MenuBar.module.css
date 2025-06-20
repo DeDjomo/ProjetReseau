@@ -1,0 +1,345 @@
+/* MenuBar.module.css - Version corrigée */
+
+.menuBar {
+    background: linear-gradient(135deg, #0D47A1 0%, #1565C0 100%);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 4px 20px rgba(13, 71, 161, 0.3);
+    border-bottom: 3px solid #FF7A00;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.logoSection {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 200px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logoText {
+    display: flex;
+    flex-direction: column;
+}
+
+.brandName {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: white;
+}
+
+.brandTagline {
+    font-size: 0.75rem;
+    color: #bbdefb;
+    font-weight: 400;
+}
+
+/* Stats rapides au centre */
+.quickStats {
+    display: flex;
+    gap: 3rem;
+    flex: 1;
+    justify-content: center;
+}
+
+.statItem {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.statItem:hover {
+    background: rgba(255, 122, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.statIcon {
+    width: 24px;
+    height: 24px;
+    color: #FF7A00;
+}
+
+.statContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.statValue {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1;
+    color: white;
+}
+
+.statLabel {
+    font-size: 0.75rem;
+    color: #bbdefb;
+    font-weight: 400;
+}
+
+/* Actions utilisateur */
+.userActions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.searchContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.searchInput {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
+    color: white;
+    font-size: 0.875rem;
+    min-width: 280px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.searchInput::placeholder {
+    color: #bbdefb;
+}
+
+.searchInput:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.25);
+    border-color: #FF7A00;
+    box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.2);
+}
+
+.searchIcon {
+    position: absolute;
+    left: 0.75rem;
+    width: 16px;
+    height: 16px;
+    color: #bbdefb;
+    z-index: 1;
+}
+
+.actionButton {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+}
+
+.actionButton:hover {
+    background: #FF7A00;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 122, 0, 0.4);
+}
+
+.badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #ef4444;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 2px solid #0D47A1;
+}
+
+/* Menu utilisateur */
+.userMenu {
+    position: relative;
+}
+
+.userProfile {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.userProfile:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #FF7A00, #f97316);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.userName {
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.userRole {
+    font-size: 0.75rem;
+    color: #bbdefb;
+    font-weight: 400;
+}
+
+.chevron {
+    width: 12px;
+    height: 12px;
+    transition: transform 0.3s ease;
+}
+
+.chevronOpen {
+    transform: rotate(180deg);
+}
+
+/* Dropdown menu */
+.userDropdown {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e2e8f0;
+    min-width: 200px;
+    overflow: hidden;
+    z-index: 1000;
+    animation: dropdownAppear 0.2s ease-out;
+}
+
+@keyframes dropdownAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdownItem {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: none;
+    border: none;
+    text-align: left;
+    color: #374151;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+}
+
+.dropdownItem:hover {
+    background-color: #f8fafc;
+}
+
+.dropdownItem:last-child {
+    color: #ef4444;
+}
+
+.dropdownItem:last-child:hover {
+    background-color: #fef2f2;
+}
+
+.dropdownSeparator {
+    margin: 0;
+    border: none;
+    height: 1px;
+    background: #e2e8f0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 1rem;
+        gap: 1rem;
+    }
+    
+    .quickStats {
+        gap: 1.5rem;
+    }
+    
+    .searchInput {
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logoText {
+        display: none;
+    }
+    
+    .quickStats {
+        display: none;
+    }
+    
+    .searchInput {
+        min-width: 150px;
+    }
+    
+    .userInfo {
+        display: none;
+    }
+}
