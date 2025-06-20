@@ -244,10 +244,10 @@
 }
 
 /* Styles globaux Leaflet override */
-:global(.leaflet-container) {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
-  background: #f8fafc !important;
-}
+/*:global(.leaflet-container) {*/
+/*  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;*/
+/*  background: #f8fafc !important;*/
+/*}*/
 
 :global(.leaflet-popup-content-wrapper) {
   background: transparent !important;
