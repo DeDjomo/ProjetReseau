@@ -1,9 +1,7 @@
 'use client';
 
 import { useRouter, useParams } from 'next/navigation';
-import { useState } from 'react';
 import MenuBar from './MenuBar';
-import Image from 'next/image';
 import { 
     FaArrowLeft, 
     FaCar, 
