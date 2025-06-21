@@ -2,12 +2,10 @@
 
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-    faPenToSquare, 
+import {
     faQuestion, 
     faUser, 
-    faEnvelope, 
-    faPhone, 
+    faEnvelope,
     faTruck,
     faIdCard 
 } from '@fortawesome/free-solid-svg-icons';
@@ -372,7 +370,7 @@ export default function DriverForm() {
 
                                     <div className={styles.fieldGroup}>
                                         <label className={styles.label}>
-                                            Date d'obtention <span className={styles.required}>*</span>
+                                            Date obtention <span className={styles.required}>*</span>
                                         </label>
                                         <input
                                             type="date"

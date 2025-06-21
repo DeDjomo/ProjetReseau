@@ -10,7 +10,6 @@ import {
     faFilter,
     faStar,
     faPhone,
-    faMapMarkerAlt,
     faArrowRight,
     faCar,
     faCheckCircle,

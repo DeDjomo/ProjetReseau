@@ -7,7 +7,7 @@ import { IconType } from "react-icons";
 import {
   FaUser, FaIdCard, FaBirthdayCake, FaEnvelope, FaHome, FaCar,
   FaCalendarCheck, FaClock, FaCheckCircle, FaMapMarkerAlt, FaPhone, FaStar,
-  FaArrowLeft, FaArrowRight, FaChevronLeft, FaChevronRight
+  FaArrowLeft, FaChevronLeft, FaChevronRight
 } from "react-icons/fa";
 import Image from "next/image";
 import dynamic from 'next/dynamic';
@@ -37,7 +37,7 @@ export default function BilanChauffeur() {
   const currentId = params?.id as string;
   
   const [ongletActif, setOngletActif] = useState("presentation");
-  const [recherche, setRecherche] = useState("");
+  const [recherche] = useState("");
 
   // Données des chauffeurs (en production, ça viendrait d'une API)
   const chauffeurs = [
