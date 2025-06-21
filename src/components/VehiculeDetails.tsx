@@ -7,18 +7,13 @@ import Image from 'next/image';
 import { 
     FaArrowLeft, 
     FaCar, 
-    FaUser, 
-    FaMapMarkerAlt, 
-    FaGasPump,
-    FaClock,
+    FaUser,
     FaRoute,
     FaInfoCircle,
     FaChartLine,
     FaTools,
     FaTachometerAlt,
     FaCalendarAlt,
-    FaPhone,
-    FaEnvelope
 } from 'react-icons/fa';
 import styles from './VehiculeDetails.module.css';
 
