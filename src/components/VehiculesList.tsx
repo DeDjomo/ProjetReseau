@@ -13,7 +13,6 @@ import {
     faUser,
     faEye,
     faGasPump,
-    faRoute,
     faTools,
     faCheckCircle,
     faTimesCircle,
@@ -64,7 +63,7 @@ export default function VehiculesList() {
             note: 3.8,
             revenus: '18,750 €',
             depenses: '5,100 €',
-            profit: '13,650 €'
+            profit: "13,650 €"
         },
         {
             id: 'v3',
@@ -238,7 +237,7 @@ export default function VehiculesList() {
                                         <option value="tous">Tous les statuts</option>
                                         <option value="en service">En service</option>
                                         <option value="maintenance">En maintenance</option>
-                                        <option value="arrêt">À l'arrêt</option>
+                                        <option value="arrêt">À l arrêt</option>
                                     </select>
                                     
                                     <button className="px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">

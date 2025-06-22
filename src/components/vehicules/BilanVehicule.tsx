@@ -8,8 +8,7 @@ import {
   FaTruck, FaIdCard, FaCalendarAlt, FaUser, FaGasPump, FaCar,
   FaRoute, FaClock, FaCheckCircle, FaMapMarkerAlt, FaPhone, FaStar,
   FaArrowLeft, FaChevronLeft, FaChevronRight, FaTools, FaTachometerAlt,
-  FaMoneyBillWave, FaChartLine, FaHistory, FaExclamationTriangle,
-  FaClipboardList, FaFileInvoiceDollar
+  FaMoneyBillWave
 } from "react-icons/fa";
 import Image from "next/image";
 import dynamic from 'next/dynamic';
@@ -675,7 +674,7 @@ export default function BilanVehicule() {
                   ))}
                 </div>
               )}
-            </div>S'il te plait, donne moi les modifications à faire sur les autres fichiers pour pouvoir naviguer entre ces différentes routes de façon cohérente.
+            </div>S il te plait, donne moi les modifications à faire sur les autres fichiers pour pouvoir naviguer entre ces différentes routes de façon cohérente.
           </div>
         </div>
 

@@ -6,8 +6,7 @@ import {
     faUser, 
     faBell,
     faChevronDown,
-    faCog,
-    faHome
+    faCog
 } from "@fortawesome/free-solid-svg-icons";
 import styles from './MenuBar.module.css';
 import { useState } from 'react';
