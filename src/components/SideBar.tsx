@@ -42,7 +42,7 @@ export default function SideBar() {
             icon: faTruck,
             title: "Ajouter un véhicule",
             subtitle: "Nouveau véhicule",
-            onClick: () => {},
+            onClick: () => router.push('/vehiculeForm'),
             color: "#f59e0b"
         },
         {
