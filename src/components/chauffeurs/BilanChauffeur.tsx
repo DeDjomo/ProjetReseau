@@ -12,6 +12,7 @@ import {
 import Image from "next/image";
 import dynamic from 'next/dynamic';
 import styles from './BilanChauffeur.module.css';
+import SideBar from "@/components/SideBar";
 
 // Import dynamique pour éviter les erreurs SSR avec Leaflet
 const MapContainer = dynamic(
@@ -435,6 +436,9 @@ export default function BilanChauffeur() {
         </div>
       </div>
 
+      <div className="inline-flex min-h-screen w-full">
+        <SideBar />
+
       {/* Contenu principal */}
       <div className={styles.mainContent}>
         {/* Section des informations chauffeur */}
@@ -802,6 +806,7 @@ export default function BilanChauffeur() {
               )}
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>
