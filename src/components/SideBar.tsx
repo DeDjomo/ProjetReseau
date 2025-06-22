@@ -8,13 +8,15 @@ import {
     faUser, 
     faPlus,
     faDashboard,
-    faUsers
+    faUsers,
+    faHistory
 } from '@fortawesome/free-solid-svg-icons'
 import styles from './SideBar.module.css'
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 
 export default function SideBar() {
     const router = useRouter();
+    const pathname = usePathname();
     
     const mainMenuItems = [
         {
@@ -22,6 +24,7 @@ export default function SideBar() {
             title: "Mes flottes",
             subtitle: "flotte actuelle: flotte 1",
             onClick: () => router.push('/'),
+            path: '/',
             color: "#4ade80"
         },
         {
@@ -29,6 +32,7 @@ export default function SideBar() {
             title: "Ajouter un chauffeur",
             subtitle: "Nouveau membre",
             onClick: () => router.push('/driverForm'),
+            path: '/driverForm',
             color: "#60a5fa"
         },
         {
@@ -36,20 +40,24 @@ export default function SideBar() {
             title: "Liste des chauffeurs",
             subtitle: "Gestion équipe",
             onClick: () => router.push('/chauffeurs'),
+            path: '/chauffeurs',
             color: "#06b6d4"
         },
         {
             icon: faTruck,
             title: "Ajouter un véhicule",
             subtitle: "Nouveau véhicule",
-            onClick: () => router.push('/vehiculeForm'),
-            color: "#f59e0b"
+            onClick: () => router.push("/vehiculeForm"), // TODO: Créer cette page plus tard
+            path: '/vehiculeForm',
+            color: "#f59e0b",
+            disabled: false // Temporairement désactivé
         },
         {
             icon: faList,
             title: "Liste des véhicules",
             subtitle: "Gestion flotte",
-            onClick: () => {},
+            onClick: () => router.push('/vehicules'),
+            path: '/vehicules',
             color: "#8b5cf6"
         }
     ];
@@ -59,7 +67,8 @@ export default function SideBar() {
             icon: faChartBar,
             title: "Bilan des véhicules",
             subtitle: "Statistiques",
-            onClick: () => {},
+            onClick: () => router.push('/vehicules'), // Redirige vers la liste pour l'instant
+            path: '/vehicules',
             color: "#10b981"
         },
         {
@@ -67,9 +76,25 @@ export default function SideBar() {
             title: "Bilan des chauffeurs",
             subtitle: "Performance",
             onClick: () => router.push('/chauffeurs'),
+            path: '/chauffeurs',
             color: "#f43f5e"
+        },
+        {
+            icon: faHistory,
+            title: "Historique véhicules",
+            subtitle: "Suivi activités",
+            onClick: () => router.push('/vehicules/historique'),
+            path: '/vehicules/historique',
+            color: "#6366f1"
         }
     ];
+
+    const isActive = (itemPath: string) => {
+        if (itemPath === '/') {
+            return pathname === '/';
+        }
+        return pathname.startsWith(itemPath);
+    };
 
     return (
         <aside className={styles.sidebar}>
@@ -85,12 +110,13 @@ export default function SideBar() {
                         {mainMenuItems.map((item, index) => (
                             <button
                                 key={index}
-                                className={styles.menuItem}
+                                className={`${styles.menuItem} ${isActive(item.path) ? styles.menuItemActive : ''} ${item.disabled ? styles.menuItemDisabled : ''}`}
                                 onClick={item.onClick}
+                                disabled={item.disabled}
                             >
                                 <div 
                                     className={styles.menuIcon}
-                                    style={{ backgroundColor: item.color }}
+                                    style={{ backgroundColor: item.disabled ? '#94a3b8' : item.color }}
                                 >
                                     <FontAwesomeIcon icon={item.icon} />
                                 </div>
@@ -115,7 +141,7 @@ export default function SideBar() {
                         {analyticsItems.map((item, index) => (
                             <button
                                 key={index}
-                                className={styles.menuItem}
+                                className={`${styles.menuItem} ${isActive(item.path) ? styles.menuItemActive : ''}`}
                                 onClick={item.onClick}
                             >
                                 <div 
@@ -136,7 +162,10 @@ export default function SideBar() {
 
                 {/* Bouton d'action rapide */}
                 <div className={styles.quickAction}>
-                    <button className={styles.quickActionButton}>
+                    <button 
+                        className={styles.quickActionButton}
+                        onClick={() => router.push('/driverForm')} // Redirige vers l'ajout de chauffeur existant
+                    >
                         <FontAwesomeIcon icon={faPlus} className={styles.quickActionIcon} />
                         <span>Action rapide</span>
                     </button>

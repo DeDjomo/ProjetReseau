@@ -6,29 +6,54 @@ import {
     faUser, 
     faBell,
     faChevronDown,
-    faCog
+    faCog,
+    faHome
 } from "@fortawesome/free-solid-svg-icons";
 import styles from './MenuBar.module.css';
 import { useState } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
 
 export default function MenuBar() {
     const [userMenuOpen, setUserMenuOpen] = useState(false);
+    const router = useRouter();
+    const pathname = usePathname();
+
+    // Fonction pour obtenir le titre de la page actuelle
+    const getPageTitle = () => {
+        if (pathname === '/') return 'Dashboard';
+        if (pathname.startsWith('/chauffeurs/') && pathname !== '/chauffeurs') return 'Bilan Chauffeur';
+        if (pathname === '/chauffeurs') return 'Liste des Chauffeurs';
+        if (pathname === '/driverForm') return 'Ajouter un Chauffeur';
+        if (pathname.startsWith('/vehicules/bilan/')) return 'Bilan Véhicule';
+        if (pathname === '/vehicules/historique') return 'Historique Véhicules';
+        if (pathname === '/vehicules') return 'Liste des Véhicules';
+        if (pathname.startsWith('/vehicules/') && pathname !== '/vehicules') return 'Détails Véhicule';
+        return 'FleetFlow';
+    };
 
     return (
         <header className={styles.menuBar}>
             <div className={styles.container}>
-                {/* Logo Section */}
-                <div className={styles.logoSection}>
+                {/* Logo Section - Cliquable pour retourner au dashboard */}
+                <div 
+                    className={styles.logoSection}
+                    onClick={() => router.push('/')}
+                    style={{ cursor: 'pointer' }}
+                >
                     <img src="/images/logo.png" alt="FleetFlow Logo" className={styles.logo}/>
                     <div className={styles.logoText}>
                         <span className={styles.brandName}>FleetFlow</span>
-                        <span className={styles.brandTagline}>Gestion de flotte</span>
+                        <span className={styles.brandTagline}>{getPageTitle()}</span>
                     </div>
                 </div>
 
-                {/* Stats rapides au centre */}
+                {/* Stats rapides au centre - Cliquables */}
                 <div className={styles.quickStats}>
-                    <div className={styles.statItem}>
+                    <div 
+                        className={styles.statItem}
+                        onClick={() => router.push('/vehicules')}
+                        style={{ cursor: 'pointer' }}
+                    >
                         <FontAwesomeIcon icon={faTruck} className={styles.statIcon} />
                         <div className={styles.statContent}>
                             <span className={styles.statValue}>14</span>
@@ -36,7 +61,11 @@ export default function MenuBar() {
                         </div>
                     </div>
                     
-                    <div className={styles.statItem}>
+                    <div 
+                        className={styles.statItem}
+                        onClick={() => router.push('/chauffeurs')}
+                        style={{ cursor: 'pointer' }}
+                    >
                         <FontAwesomeIcon icon={faUser} className={styles.statIcon} />
                         <div className={styles.statContent}>
                             <span className={styles.statValue}>8</span>
