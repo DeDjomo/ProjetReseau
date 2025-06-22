@@ -4,12 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faUser } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/navigation';
 import SideBar from "@/components/SideBar";
+import MenuBar from "@/components/MenuBar";
 
 export default function VehiculeFormPage() {
     const router = useRouter();
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+            <MenuBar />
             {/* Header avec navigation */}
             <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-sm border-b border-slate-200">
                 <div className="max-width-1400px mx-auto px-4 py-4">
