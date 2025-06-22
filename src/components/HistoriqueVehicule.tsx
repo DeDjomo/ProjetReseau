@@ -6,8 +6,8 @@ import MenuBar from '@/components/MenuBar';
 import SideBar from '@/components/SideBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    faHistory, faSearch, faFilter, faCalendarAlt, faTruck, faUser,
-    faTools, faGasPump, faRoute, faCheckCircle, faTimesCircle,
+    faHistory, faSearch,  faCalendarAlt, faTruck, faUser,
+    faTools,  faRoute, faCheckCircle,
     faExclamationTriangle, faClock, faMapMarkerAlt, faFileAlt,
     faChartLine, faMoneyBillWave, faArrowLeft
 } from '@fortawesome/free-solid-svg-icons';
@@ -399,7 +399,7 @@ export default function HistoriqueVehicule() {
                                     Historique des Véhicules
                                 </h1>
                                 <p className="text-slate-600">
-                                    Consultez l'historique complet des événements de votre flotte
+                                    Consultez l historique complet des événements de votre flotte
                                 </p>
                             </div>
                         </div>
@@ -458,7 +458,7 @@ export default function HistoriqueVehicule() {
                                 </div>
                                 
                                 <div>
-                                    <label className="block text-sm font-medium text-slate-600 mb-2">Type d'événement</label>
+                                    <label className="block text-sm font-medium text-slate-600 mb-2">Type d événement</label>
                                     <select
                                         value={selectedType}
                                         onChange={(e) => setSelectedType(e.target.value)}
