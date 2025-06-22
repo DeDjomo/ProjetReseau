@@ -3,6 +3,7 @@ import DriverForm from '@/components/DriverForm';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faUser } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/navigation';
+import SideBar from "@/components/SideBar";
 
 export default function DriverFormPage() {
     const router = useRouter();
@@ -37,21 +38,23 @@ export default function DriverFormPage() {
                     </div>
                 </div>
             </header>
+            <div className="inline-flex min-h-screen w-full">
+                <SideBar />
 
             {/* Contenu principal */}
-            <main className="relative">
-                {/* Background decoratif */}
-                <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200/30 rounded-full blur-3xl"></div>
-                    <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-orange-200/30 rounded-full blur-3xl"></div>
-                </div>
-                
-                {/* Formulaire */}
-                <div className="relative z-10">
-                    <DriverForm />
-                </div>
-            </main>
+                <main className="relative ml-18">
+                    {/* Background decoratif */}
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200/30 rounded-full blur-3xl"></div>
+                        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-orange-200/30 rounded-full blur-3xl"></div>
+                    </div>
 
+                     Formulaire
+                    <div className="relative z-10">
+                        <DriverForm />
+                    </div>
+                </main>
+            </div>
             {/* Footer optionnel */}
             <footer className="bg-white/50 backdrop-blur-sm border-t border-slate-200 py-6 mt-12">
                 <div className="max-width-1400px mx-auto px-4 text-center">

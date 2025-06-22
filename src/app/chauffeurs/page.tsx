@@ -15,6 +15,7 @@ import {
     faCheckCircle,
     faTimesCircle
 } from '@fortawesome/free-solid-svg-icons';
+import SideBar from "@/components/SideBar";
 
 export default function ChauffeursList() {
     const router = useRouter();
@@ -108,7 +109,8 @@ export default function ChauffeursList() {
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
             <MenuBar />
-            
+            <div className="inline-flex min-h-screen w-full">
+                <SideBar />
             <main className="max-w-7xl mx-auto p-6">
                 {/* Header */}
                 <div className="mb-8">
@@ -298,6 +300,7 @@ export default function ChauffeursList() {
                     </div>
                 )}
             </main>
+        </div>
         </div>
     );
 }
